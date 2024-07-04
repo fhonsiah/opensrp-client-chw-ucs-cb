@@ -31,6 +31,12 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activity.MazoeziRegisterActivity"
+            android:theme="@style/ChwTheme.NoActionBar" />
+        <activity
+            android:name=".activity.GeRegisterActivity"
+            android:theme="@style/ChwTheme.NoActionBar" />
+        <activity
             android:name=".activity.KvpPrEPRegisterActivity"
             android:theme="@style/ChwTheme.NoActionBar" />
         <activity

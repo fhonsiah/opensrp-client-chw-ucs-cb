@@ -124,7 +124,7 @@ public class LoginActivity extends BaseLoginActivity implements BaseLoginContrac
         Intent intent;
         if (BuildConfig.BUILD_FOR_BORESHA_AFYA_SOUTH) {
             intent = new Intent(this, ChwApplication.getApplicationFlavor().launchChildClientsAtLogin() ?
-                    ChildRegisterActivity.class : AllClientsRegisterActivity.class);
+                    ChildRegisterActivity.class : MazoeziRegisterActivity.class);
         } else {
             intent = new Intent(this, ChwApplication.getApplicationFlavor().launchChildClientsAtLogin() ?
                     ChildRegisterActivity.class : FamilyRegisterActivity.class);
