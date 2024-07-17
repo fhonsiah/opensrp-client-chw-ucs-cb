@@ -48,6 +48,8 @@ public class NavigationModelFlv implements NavigationModel.Flavor {
             NavigationOption op21 = new NavigationOption(R.mipmap.sidemenu_updates, R.mipmap.sidemenu_updates_active, R.string.sbc, CoreConstants.DrawerMenu.SBC, 0);
             NavigationOption op22 = new NavigationOption(R.mipmap.sidemenu_updates, R.mipmap.sidemenu_updates_active, R.string.sbc_monthly_social_media_report, CoreConstants.DrawerMenu.SBC_MONTHLY_SOCIAL_MEDIA_REPORT, 0);
 
+            NavigationOption getNavigationOption = new NavigationOption(R.mipmap.sidemenu_families, R.mipmap.sidemenu_families_active, R.string.menu_ge, CoreConstants.DrawerMenu.GE, 0);
+
             AllSharedPreferences allSharedPreferences = Utils.getAllSharedPreferences();
             SharedPreferences preferences = allSharedPreferences.getPreferences();
             String teamRoleIdentifier = "";
@@ -113,6 +115,8 @@ public class NavigationModelFlv implements NavigationModel.Flavor {
                     navigationOptions.add(op21);
                 }
                 navigationOptions.addAll(Arrays.asList(op8, op15));
+
+                navigationOptions.add(getNavigationOption);
             }
         }
 

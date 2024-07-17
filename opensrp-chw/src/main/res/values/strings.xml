@@ -458,6 +458,9 @@
     <string name="iccm_pneumonia">Pneumonia</string>
     <string name="iccm_diarrhea">Diarrhea</string>
 
+    <!--     Gender Equality-->
+    <string name="menu_ge">GE Equality</string>
+
     <!--    ICCM Visit History-->
     <string name="iccm_visit">ICCM Visits</string>
     <string name="iccm_reports_title">ICCM Reports</string>
