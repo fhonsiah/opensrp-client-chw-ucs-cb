@@ -43,6 +43,7 @@ import org.smartregister.chw.activity.KvpPrEPRegisterActivity;
 import org.smartregister.chw.activity.LTFURegisterActivity;
 import org.smartregister.chw.activity.LoginActivity;
 import org.smartregister.chw.activity.MalariaRegisterActivity;
+import org.smartregister.chw.activity.MazoeziRegisterActivity;
 import org.smartregister.chw.activity.MotherChampionRegisterActivity;
 import org.smartregister.chw.activity.PncRegisterActivity;
 import org.smartregister.chw.activity.ReferralRegisterActivity;
@@ -392,6 +393,7 @@ public class ChwApplication extends CoreChwApplication {
         registeredActivities.put(CoreConstants.REGISTERED_ACTIVITIES.MOTHER_CHAMPION_ACTIVITY, MotherChampionRegisterActivity.class);
         registeredActivities.put(CoreConstants.REGISTERED_ACTIVITIES.AGYW_REGISTER_ACTIVITY, AgywRegisterActivity.class);
         registeredActivities.put( CoreConstants.REGISTERED_ACTIVITIES.GE_REGISTER_ACTIVITY, GeRegisterActivity.class);
+        registeredActivities.put( CoreConstants.REGISTERED_ACTIVITIES.MAZOEZI_REGISTER_ACTIVITY, MazoeziRegisterActivity.class);
         return registeredActivities;
     }
 

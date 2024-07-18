@@ -30,6 +30,15 @@ public class GeRegisterFragmentPresenter implements BaseRegisterFragmentContract
         return model.getTableName();
     }
 
+    public String getCountSelect(String m){
+        return model.getCountSelect(m);
+    }
+
+    public String getMainSelect(String m){
+        return model.getMainSelect(m);
+    }
+
+
     @Override
     public void processViewConfigurations() {
     }
@@ -41,8 +50,8 @@ public class GeRegisterFragmentPresenter implements BaseRegisterFragmentContract
     public void initializeQueries(String s) {
 
           //this is where the presenter gets the data from the model
-          view.initializeQueryParams(getTableName(),model.getCountSelect(s),model.getMainSelect(s));
-
+//          view.initializeQueryParams(getTableName(),model.getCountSelect(s),model.getMainSelect(s));
+        view.initializeQueryParams(getTableName(),getCountSelect(s),getMainSelect(s));
           //casting the initializeAdapter method which is a new method in to the fragment so
           // the view has to be casted to become the adapter
           ((GeRegisterFragment)view).initializeAdapter();

@@ -461,6 +461,9 @@
     <!--     Gender Equality-->
     <string name="menu_ge">GE Equality</string>
 
+    <!-- Mazoezi Item   -->
+    <string name="menu_mazoezi">Mazoezi Item</string>
+
     <!--    ICCM Visit History-->
     <string name="iccm_visit">ICCM Visits</string>
     <string name="iccm_reports_title">ICCM Reports</string>

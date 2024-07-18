@@ -1,10 +1,12 @@
 package org.smartregister.chw.activity;
 
 import android.content.Intent;
+import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
 import org.json.JSONObject;
+import org.smartregister.chw.core.custom_views.NavigationMenu;
 import org.smartregister.chw.fragment.GeRegisterFragment;
 import org.smartregister.chw.presenter.GeRegisterActivityPresenter;
 import org.smartregister.helper.BottomNavigationHelper;
@@ -24,6 +26,14 @@ public class GeRegisterActivity extends BaseRegisterActivity {
     protected BaseRegisterFragment getRegisterFragment() {
 
         return new GeRegisterFragment();
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        //obtaining the instance of the navigationMenu
+        NavigationMenu.getInstance(this,null,null);
     }
 
     @Override

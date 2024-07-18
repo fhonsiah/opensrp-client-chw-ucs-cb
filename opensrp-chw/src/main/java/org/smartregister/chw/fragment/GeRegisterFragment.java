@@ -2,7 +2,10 @@ package org.smartregister.chw.fragment;
 
 import android.view.View;
 
+import androidx.appcompat.widget.Toolbar;
+
 import org.smartregister.chw.R;
+import org.smartregister.chw.core.custom_views.NavigationMenu;
 import org.smartregister.chw.model.GeRegisterFragmentModel;
 import org.smartregister.chw.presenter.GeRegisterFragmentPresenter;
 import org.smartregister.chw.provider.OpdRegisterProvider;
@@ -23,19 +26,21 @@ public class GeRegisterFragment extends BaseRegisterFragment {
     public void setupViews(View view) {
         super.setupViews(view);
 
+        //Update top left icon
+        View qrCodeView = view.findViewById(R.id.scanQrCode);
+        qrCodeView.setVisibility(View.GONE);
+
+        //Update title name
         view.findViewById(R.id.scanQrCode).setVisibility(View.GONE);
-        view.findViewById(R.id.left_menu).setVisibility(View.VISIBLE);
         view.findViewById(R.id.opensrp_logo_image_view).setVisibility(View.GONE);
         view.findViewById(R.id.txt_title_label).setVisibility(View.VISIBLE);
-//        int y = 6;
-//        float z = (float)y
-//
-//        view.findViewById(R.id.txt_title_label);
-//        CustomFontTextView txt = (CustomFontTextView)view;
-//        txt.setText(R.string.menu_ge);
-
-
         ((CustomFontTextView)view.findViewById(R.id.txt_title_label)).setText(R.string.menu_ge);
+
+        //update the Navigation menu in the fragment
+        Toolbar toolbar = view.findViewById(R.id.register_toolbar);
+
+        //Obtaining the instance of the Navigation menu
+        NavigationMenu.getInstance(getActivity(),null,toolbar);
 
     }
 

@@ -50,6 +50,8 @@ public class NavigationModelFlv implements NavigationModel.Flavor {
 
             NavigationOption getNavigationOption = new NavigationOption(R.mipmap.sidemenu_families, R.mipmap.sidemenu_families_active, R.string.menu_ge, CoreConstants.DrawerMenu.GE, 0);
 
+            NavigationOption mazoeziNavOption = new NavigationOption(R.mipmap.sidemenu_referrals, R.mipmap.sidemenu_referrals_active, R.string.menu_mazoezi,CoreConstants.DrawerMenu.MAZOEZI, 0);
+
             AllSharedPreferences allSharedPreferences = Utils.getAllSharedPreferences();
             SharedPreferences preferences = allSharedPreferences.getPreferences();
             String teamRoleIdentifier = "";
@@ -117,6 +119,8 @@ public class NavigationModelFlv implements NavigationModel.Flavor {
                 navigationOptions.addAll(Arrays.asList(op8, op15));
 
                 navigationOptions.add(getNavigationOption);
+
+                navigationOptions.add(mazoeziNavOption);
             }
         }
 
