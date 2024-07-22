@@ -1,6 +1,7 @@
 package org.smartregister.chw.model;
 
 import org.smartregister.chw.contract.GeRegisterFragmentContract;
+import org.smartregister.chw.core.utils.CoreConstants;
 
 public class GeRegisterFragmentModel implements GeRegisterFragmentContract.Model {
 
@@ -13,12 +14,12 @@ public class GeRegisterFragmentModel implements GeRegisterFragmentContract.Model
 
     @Override
     public String getDefaultSortQuery() {
-        return "last_interacted_with DESC";
+        return "ege.last_interacted_with DESC";
     }
 
     @Override
     public String getTableName() {
-        return "ec_family_member";
+        return "ec_gender_equality";
     }
 
     //in this method we are going to write  a full query name as written in executing
@@ -33,6 +34,14 @@ public class GeRegisterFragmentModel implements GeRegisterFragmentContract.Model
 
         //adding a column that will be the primary key of the table
         //the table  result is expected to have a column of id in the result
-        return "SELECT id as _id, *  FROM " +getTableName() + " WHERE " +mainCondition;
+//        return "SELECT id as _id, *  FROM " +getTableName() + " WHERE " +mainCondition;
+
+        // here we are going to use a query that returns the exact individuals who have been enrolled
+        return "SELECT " +
+                "ege.id AS _id, " +
+                "* " +
+                "FROM " +getTableName() + " ege " +
+                "JOIN " + CoreConstants.TABLE_NAME.FAMILY_MEMBER+ " efm ON " + " efm.base_entity_id = ege.base_entity_id " +
+                "WHERE ege." +mainCondition;
     }
 }
