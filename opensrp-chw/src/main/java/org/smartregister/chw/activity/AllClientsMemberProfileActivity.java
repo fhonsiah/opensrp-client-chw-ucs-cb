@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.Menu;
+import android.widget.Toast;
 
 import androidx.viewpager.widget.ViewPager;
 
@@ -63,6 +64,17 @@ public class AllClientsMemberProfileActivity extends CoreAllClientsMemberProfile
         menu.findItem(R.id.action_sick_child_follow_up).setVisible(false);
         menu.findItem(R.id.action_malaria_diagnosis).setVisible(false);
         menu.findItem(R.id.action_remove_member).setVisible(false);
+
+        //creating an if statement to allow visibility of the new optionItem based on the gender and age >= 15
+        String dateOfBirth = Utils.getValue(commonPersonObject.getColumnmaps(), DBConstants.KEY.DOB, false);
+        int clientAge = Utils.getAgeFromDate(dateOfBirth);
+
+        //condition statement
+        if(gender.equalsIgnoreCase("female") && clientAge >= 15){
+            menu.findItem(R.id.action_ge_enrolment).setVisible(true);
+        } else {
+            menu.findItem(R.id.action_ge_enrolment).setVisible(false);
+        }
 
         AllSharedPreferences allSharedPreferences = org.smartregister.util.Utils.getAllSharedPreferences();
         SharedPreferences preferences = allSharedPreferences.getPreferences();
@@ -283,6 +295,23 @@ public class AllClientsMemberProfileActivity extends CoreAllClientsMemberProfile
     @Override
     protected void startGbvRegistration() {
         //TOBE Implementented
+    }
+
+    @Override
+    protected void startGeEnrollment() {
+
+        //creating a toast message that will help us see how far we have
+        //come and here we want to see the baseEntityId of the client
+        Toast.makeText(this,"Start GeEnrollment : BaseEntityId = "+baseEntityId,
+                Toast.LENGTH_LONG).show();
+
+        //Opening an Activity from another activity using INTENTS
+        Intent geIntent = new Intent(this,GeRegisterActivity.class);
+        geIntent.putExtra("BASE_ENTITY_ID",baseEntityId);
+        startActivity(geIntent);
+
+        //Opening an Activity from the method that created the INTENT
+//        GeRegisterActivity.launchGeRegisterActivity("BASE_ENTITY_ID",AllClientsMemberProfileActivity.this);
     }
 
     @Override
