@@ -1,21 +1,32 @@
 package org.smartregister.chw.fragment;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.view.View;
 
 import androidx.appcompat.widget.Toolbar;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+
 import org.smartregister.chw.R;
+import org.smartregister.chw.activity.GeProfileActivity;
 import org.smartregister.chw.core.custom_views.NavigationMenu;
 import org.smartregister.chw.model.GeRegisterFragmentModel;
 import org.smartregister.chw.presenter.GeRegisterFragmentPresenter;
 import org.smartregister.chw.provider.OpdRegisterProvider;
+import org.smartregister.commonregistry.CommonPersonObjectClient;
 import org.smartregister.cursoradapter.RecyclerViewPaginatedAdapter;
 import org.smartregister.view.customcontrols.CustomFontTextView;
 import org.smartregister.view.fragment.BaseRegisterFragment;
 
 import java.util.HashMap;
 
-public class GeRegisterFragment extends BaseRegisterFragment {
+import javax.json.Json;
+
+import timber.log.Timber;
+
+public class  GeRegisterFragment extends BaseRegisterFragment {
 
     @Override
     protected void initializePresenter() {
@@ -73,8 +84,29 @@ public class GeRegisterFragment extends BaseRegisterFragment {
     protected void startRegistration() {
     }
 
+
+    //this method is called once an item in the register list is clicked
+    //view is passed when this register is being clicked
+    @SuppressLint("TimberArgCount")
     @Override
     protected void onViewClicked(View view) {
+        //we are going to create an object that will help us get
+        // the client from the view that is passed in this method after getting the client
+        // object we are going to cast the object to the view tag
+        //view tag has an onClickListener and and object of the client(a container that contains client details)
+        CommonPersonObjectClient clientName = (CommonPersonObjectClient) view.getTag(R.id.VIEW_CLIENT);
+
+        //we have to create an intent that will enable us to open the Profile Activity
+        Intent intent = new Intent(getActivity(), GeProfileActivity.class);
+        intent.putExtra("client_info",clientName);
+
+        //after getting th intent we are going to start the Activity we have intended to
+        startActivity(intent);
+
+        //we can pass the intent on logcat to view what is being passed
+        Timber.d("Client - ...", new Gson().toJson(intent));
+//        Timber.d("Passed: %s", new Gson().toJson(intent));
+
     }
 
     @Override
