@@ -5897,6 +5897,41 @@
           }
         }
       ]
+    },
+    {
+      "name": "ec_gender_equality",
+      "columns": [
+        {
+          "column_name": "base_entity_id",
+          "type": "event",
+          "json_mapping": {
+            "field": "baseEntityId"
+          }
+        },
+        {
+          "column_name": "consent_given",
+          "type": "event",
+          "json_mapping": {
+            "field": "obs.formSubmissionField",
+            "concept": "ge_consent_form"
+          }
+        },
+        {
+          "column_name": "enrollment_date",
+          "type": "event",
+          "json_mapping": {
+            "field": "obs.formSubmissionField",
+            "concept": "date_of_enrollment"
+          }
+        },
+        {
+          "column_name": "last_interacted_with",
+          "type": "Event",
+          "json_mapping": {
+            "field": "version"
+          }
+        }
+      ]
     }
   ]
 }
