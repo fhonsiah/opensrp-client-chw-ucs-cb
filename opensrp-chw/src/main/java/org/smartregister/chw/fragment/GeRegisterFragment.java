@@ -104,8 +104,11 @@ public class  GeRegisterFragment extends BaseRegisterFragment {
         startActivity(intent);
 
         //we can pass the intent on logcat to view what is being passed
-        Timber.d("Client - ...", new Gson().toJson(intent));
+        Timber.d("Client - ...", new Gson().toJson(clientName));
 //        Timber.d("Passed: %s", new Gson().toJson(intent));
+
+
+
 
     }
 
