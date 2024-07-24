@@ -39,9 +39,10 @@ public class GeRegisterFragmentModel implements GeRegisterFragmentContract.Model
         // here we are going to use a query that returns the exact individuals who have been enrolled
         return "SELECT " +
                 "ege.id AS _id, " +
-                "* " +
+                "ege.* , efm.* , f.village_town " +
                 "FROM " +getTableName() + " ege " +
                 "JOIN " + CoreConstants.TABLE_NAME.FAMILY_MEMBER+ " efm ON " + " efm.base_entity_id = ege.base_entity_id " +
+                "JOIN "  + CoreConstants.TABLE_NAME.FAMILY+ " f ON "  + "efm.relational_id = f.base_entity_id " +
                 "WHERE ege." +mainCondition;
     }
 }
