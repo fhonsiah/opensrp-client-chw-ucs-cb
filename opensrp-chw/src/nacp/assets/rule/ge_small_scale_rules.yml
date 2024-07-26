@@ -1,0 +1,42 @@
+---
+name: step1_registered_client
+description: only clients that have selected small scale application
+condition: "step1_ge_service_type.equals('small_scale_enterpreneurs_application')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_challenges_faced
+description: only clients that have selected small scale application
+condition: "step1_ge_service_type.equals('small_scale_enterpreneurs_application')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_other_challenges
+description: only clients that have selected challenges faced
+condition: "step1_challenges_faced.contains('others_specify')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_client_counselling
+description: only clients that have selected small scale application
+condition: "step1_ge_service_type.equals('small_scale_enterpreneurs_application')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_registration_area
+description: only clients that have selected small scale application
+condition: "step1_registered_client.equals('yes')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_registration_date
+description: only clients that have selected small scale application
+condition: "step1_registered_client.equals('yes')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_challenges_faced
+description: only clients that have selected small scale application
+condition: "step1_registered_client.equals('no')"
+actions:
+  - "isRelevant = true"

@@ -1,0 +1,24 @@
+---
+name: step1_followup_visit_date
+description: only clients that have selected household sensitized GE issues
+condition: "step1_sensitization_session == 'no'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_sensitization_options
+description: only clients that have selected household sensitized GE issues
+condition: "step1_ge_equality_sensitization.contains('others_specify')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_ge_equality_sensitization
+description: only clients that have selected household sensitized GE issues
+condition: "step1_ge_service_type == 'household_sensitized_ge_issues'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_sensitization_session
+description: only clients that have selected household sensitized GE issues
+condition: "step1_ge_service_type == 'household_sensitized_ge_issues'"
+actions:
+  - "isRelevant = true"

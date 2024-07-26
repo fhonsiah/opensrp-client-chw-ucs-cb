@@ -1,0 +1,61 @@
+---
+name: step1_date_of_support
+description: only clients that have selected  legal aid support
+condition: "step1_ge_service_type == 'legal_aid_support'"
+actions:
+   - "isRelevant = true"
+---
+name: step1_GBV_elements
+description: only clients that have selected legal aid support
+condition: "step1_ge_service_type == 'legal_aid_support'"
+actions:
+   - "isRelevant = true"
+---
+name: step1_Legal_services
+description: only clients that have selected legal aid support
+condition: "step1_ge_service_type == 'legal_aid_support'"
+actions:
+   - "isRelevant = true"
+---
+name: step1_others_specify_type_of_legal_service_provided
+description: only when other option in radio button is selected one can specify the type of legal service provided
+condition: "step1_Legal_services == 'others_specify'"
+actions:
+   - "isRelevant = true"
+---
+name: step1_others_total_specify_the_referral_destination
+description: only when user selects Others(Total) value can specify the type of referral destination provided
+condition: "step1_Referral_destination == 'others'"
+actions:
+   - "isRelevant = true"
+---
+name: step1_Referral_destination
+description: only when user selects Referral then they can select the referral type taken
+condition: "step1_legal_services_provided == 'referral'"
+actions:
+   - "isRelevant = true"
+---
+name: step1_legal_services_provided
+description: only clients that have selected legal aid support
+condition: "step1_ge_service_type == 'legal_aid_support'"
+actions:
+   - "isRelevant = true"
+---
+name: step1_type_of_property_owned
+description: only clients that have selected legal aid support
+condition: "step1_property_ownership == 'yes'"
+actions:
+   - "isRelevant = true"
+---
+name: step1_other_property_specify
+description: only clients that have selected legal aid support
+condition: "step1_type_of_property_owned.contains('others_specify')"
+actions:
+   - "isRelevant = true"
+---
+name: step1_property_ownership
+description: only clients that have selected legal aid support
+condition: "step1_ge_service_type == 'legal_aid_support'"
+actions:
+   - "isRelevant = true"
+
