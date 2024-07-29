@@ -5932,6 +5932,160 @@
           }
         }
       ]
+    },
+    {
+      "name": "ec_gender_services",
+      "columns": [
+        {
+          "column_name": "base_entity_id",
+          "type": "event",
+          "json_mapping": {
+            "field": "formSubmissionId"
+          }
+        },
+        {
+          "column_name": "entity_id",
+          "type": "event",
+          "json_mapping": {
+            "field": "baseEntityId"
+          }
+        },
+        {
+          "column_name": "geServiceType",
+          "type": "event",
+          "json_mapping": {
+            "field": "obs.formSubmissionField",
+            "concept": "ge_service_type"
+          }
+        },
+        {
+          "column_name": "gbvElements",
+          "type": "event",
+          "json_mapping": {
+            "field": "obs.formSubmissionField",
+            "concept": "GBV_elements"
+          }
+        },
+        {
+          "column_name": "legalServices",
+          "type": "event",
+          "json_mapping": {
+            "field": "obs.formSubmissionField",
+            "concept": "Legal_services"
+          }
+        },
+        {
+          "column_name": "otherLegalServices",
+          "type": "event",
+          "json_mapping": {
+            "field": "obs.formSubmissionField",
+            "concept": "others_specify_type_of_legal_service_provided"
+          }
+        },
+        {
+          "column_name": "legalServicesProvided",
+          "type": "event",
+          "json_mapping": {
+            "field": "obs.formSubmissionField",
+            "concept": "legal_services_provided"
+          }
+        },
+        {
+          "column_name": "referralDestination",
+          "type": "event",
+          "json_mapping": {
+            "field": "obs.formSubmissionField",
+            "concept": "Referral_destination"
+          }
+        },
+        {
+          "column_name": "propertyOwnership",
+          "type": "event",
+          "json_mapping": {
+            "field": "obs.formSubmissionField",
+            "concept": "property_ownership"
+          }
+        },
+        {
+          "column_name": "registeredClient",
+          "type": "event",
+          "json_mapping": {
+            "field": "obs.formSubmissionField",
+            "concept": "registered_client"
+          }
+        },
+        {
+          "column_name": "registrationArea",
+          "type": "event",
+          "json_mapping": {
+            "field": "obs.formSubmissionField",
+            "concept": "registration_area"
+          }
+        },
+        {
+          "column_name": "registrationDate",
+          "type": "event",
+          "json_mapping": {
+            "field": "obs.formSubmissionField",
+            "concept": "registration_date"
+          }
+        },
+        {
+          "column_name": "challengesFaced",
+          "type": "event",
+          "json_mapping": {
+            "field": "obs.formSubmissionField",
+            "concept": "challenges_faced"
+          }
+        },
+        {
+          "column_name": "otherChallenges",
+          "type": "event",
+          "json_mapping": {
+            "field": "obs.formSubmissionField",
+            "concept": "other_challenges"
+          }
+        },
+        {
+          "column_name": "geEqualitySensitization",
+          "type": "event",
+          "json_mapping": {
+            "field": "obs.formSubmissionField",
+            "concept": "ge_equality_sensitization"
+          }
+        },
+        {
+          "column_name": "sensitizationOptions",
+          "type": "event",
+          "json_mapping": {
+            "field": "obs.formSubmissionField",
+            "concept": "sensitization_options"
+          }
+        },
+        {
+          "column_name": "sensitizationSession",
+          "type": "event",
+          "json_mapping": {
+            "field": "obs.formSubmissionField",
+            "concept": "sensitization_session"
+          }
+        },
+        {
+          "column_name": "followUpVisitDate",
+          "type": "event",
+          "json_mapping": {
+            "field": "obs.formSubmissionField",
+            "concept": "followup_visit_date"
+          }
+        },
+        {
+          "column_name": "last_interacted_with",
+          "type": "Event",
+          "json_mapping": {
+            "field": "version"
+          }
+        }
+      ]
     }
   ]
 }

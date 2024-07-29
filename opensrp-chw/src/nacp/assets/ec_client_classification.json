@@ -758,6 +758,13 @@
             "creates_case": [
               "ec_gender_equality"
             ]
+          },
+          {
+            "field": "eventType",
+            "field_value": "GE Services",
+            "creates_case": [
+              "ec_gender_services"
+            ]
           }
         ]
       }
